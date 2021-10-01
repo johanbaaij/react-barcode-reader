@@ -41,13 +41,13 @@ class BarcodeScanner extends React.Component {
   }
 
   componentDidMount() {
-    if (inIframe) window.parent.document.addEventListener('keypress', this.handleKeyPress)
-    window.document.addEventListener('keypress', this.handleKeyPress)
+    if (inIframe) window.parent.document.addEventListener('keydown', this.handleKeyPress)
+    window.document.addEventListener('keydown', this.handleKeyPress)
   }
 
   componentWillUnmount() {
-    if (inIframe) window.parent.document.removeEventListener('keypress', this.handleKeyPress)
-    window.document.removeEventListener('keypress', this.handleKeyPress)
+    if (inIframe) window.parent.document.removeEventListener('keydown', this.handleKeyPress)
+    window.document.removeEventListener('keydown', this.handleKeyPress)
   }
 
   initScannerDetection = () => {
